@@ -1,6 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import User from "./User";
+import UserList from "./UserList";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Home from "./Home";
 
 function App() {
   const userList = [
@@ -23,9 +26,10 @@ function App() {
   ];
   return (
     <div className="App">
-      {userList.map((item) => (
-        <User name={item.name} pic={item.pic} />
-      ))}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/users" element={<UserList users={userList} />} />
+      </Routes>
     </div>
   );
 }

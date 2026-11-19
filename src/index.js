@@ -1,18 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import UserProfile from './UserProile';
-import User from './User';
-import AIMessage from './AIMessage';
-import reportWebVitals from './reportWebVitals';
-import Counter1 from './Counter1';
-import Counter2 from './Counter2';
-import ColorBox from './ColorBox';
-import LoginForm1 from './LoginForm1';
-import PaintDot from './PaintDot';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import UserProfile from "./UserProile";
+import User from "./User";
+import AIMessage from "./AIMessage";
+import reportWebVitals from "./reportWebVitals";
+import Counter1 from "./Counter1";
+import Counter2 from "./Counter2";
+import ColorBox from "./ColorBox";
+import LoginForm1 from "./LoginForm1";
+import PaintDot from "./PaintDot";
+import UserList from "./UserList";
+import { BrowserRouter } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <PaintDot /> */}
@@ -21,11 +23,13 @@ root.render(
     <Counter1 />
     <Counter2 />
     <AIMessage /> */}
-    <App />
-    {/* <User />
-    <UserProfile />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    {/* <User /> */}
+    {/* <UserProfile />
     <UserProfile /> */}
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
