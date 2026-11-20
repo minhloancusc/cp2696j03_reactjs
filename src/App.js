@@ -1,9 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
 import UserList from "./UserList";
-import { Routes } from "react-router-dom";
-import { Route } from "react-router-dom";
+import { Link, Routes,Route } from "react-router-dom";
 import Home from "./Home";
+import UserDetail from "./UserDetail";
+import NotFound from "./NotFound";
+
 
 function App() {
   const userList = [
@@ -26,9 +28,16 @@ function App() {
   ];
   return (
     <div className="App">
+      <nav className="nav-list">        
+        <Link to="/">Home</Link>
+        <Link to="/users">Users</Link>        
+        <a href="/users">Users with anchor</a>
+      </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<UserList users={userList} />} />
+        <Route path="/users/:id" element={<UserDetail users={userList} />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
